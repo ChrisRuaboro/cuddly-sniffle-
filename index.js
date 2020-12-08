@@ -4,7 +4,9 @@ const server = express();
 
 server.use(bodyParser.json());
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000, function () {
+  console.log("listening");
+});
 
 const employees = []; //[{fName: "Matt", lName: "Sugu", email: "matt.s@amazon.com", role: "sde", eId: "123432"}]
 
